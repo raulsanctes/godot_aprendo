@@ -39,12 +39,10 @@ func _process(delta):
 #		Para que no se salga de los límites de la pantalla declarados en la variable
 #		screen_size, clampeamos a position. Acá lo que hacemos es lo siguiente, si 
 #		mi pantalla tiene una resolución de 1280x720, y mi position arriba llegó a 
-#		por ejemplo 1281x721, abajo lo que hacemos es lo siguiente.
-#		position.x tiene 721 de valor pero ahora le decimos que con CLAMP se fije que valor tiene
-#		devuelve 721 (position.x) y se salió del valor marcado entre 0 y 720 (screen_size.x), nos 
+#		por ejemplo 1281x721, position.x tiene 721 de valor pero ahora le decimos que con CLAMP que compruebe si se
+#		salió del valor marcado entre 0 y 720 (screen_size.x), nos 
 #		devuelve al valor límite, es decir 720. Si hubiese tenido un valor dentro del rango en position.x
 #		dejaría el valor tal como está. Clamp entonces, funciona de la siguiente manera.
-
 #		clamp(dejar_este_valor_si_esta_dentro_del_siguiente_rango, minimo_este_valor, maximo_este_otro_valor) de salirse
 #		por arriba maximo_este_otro_valor entonces colocar maximo_este_otro_valor lo mismo sucederá de salirse por debajo de
 #		minimo_este_valor
