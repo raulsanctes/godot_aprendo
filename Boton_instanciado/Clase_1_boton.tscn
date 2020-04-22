@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Panel.gd" type="Script" id=1]
+
+[node name="Panel" type="Panel"]
+margin_left = 448.0
+margin_top = 224.0
+margin_right = 632.0
+margin_bottom = 312.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 8.0
+margin_right = 128.0
+margin_bottom = 24.0
+text = "Este es un texto"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 32.0
+margin_right = 112.0
+margin_bottom = 52.0
+text = "Presioname"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 16.0
+margin_top = 56.0
+margin_right = 40.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 48.0
+margin_top = 64.0
+margin_right = 178.0
+margin_bottom = 78.0
+text = "Esto es un checkbox"
