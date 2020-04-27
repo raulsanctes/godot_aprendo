@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Player_ejemplo_basico"
-config/icon="res://icon.png"
+config/icon="res://Sprites/icon.png"
 
 [input]
 
@@ -48,4 +48,4 @@ Speed_up={
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://Misc/default_env.tres"
