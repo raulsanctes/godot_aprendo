@@ -15,16 +15,15 @@ const downRight = Vector2(1,1)
 func _ready():
 # Aquí en la variable screen_size cargamos la función get_viewport_rect() con la propiedad size para que nos devuelva
 # el tamaño en X e Y de nuestra pantalla de juego.
-	$Img.frame = 1
 	screen_size = get_viewport_rect().size
 	position.x = screen_size.x/2
 	position.y = screen_size.y/2
+	$Img.playing = false
 # Aquí con _process(), declaramos que todo lo que está dentro se ejecutará ciclicamente a la vez que con el booleano delta
 # le decimos a la función que lo haga a la velocidad de renderizado del último frame, de esta manera mantenemos una
 # velocidad constante de jugabilidad.
 
 func _process(delta):
-
 	move(delta)
 
 func move(delta):
@@ -60,21 +59,17 @@ func move(delta):
 		$lab_velo.text = "DOWN LEFT"
 		$lab_velo/lab_velocidad.text = str(velocity.x," ", velocity.y)
 	if velocity == upLeft:
-		$AnimationArrows.animation = "UpLeft"
-		$AnimationArrows.offset.x = -36
-		$AnimationArrows.offset.y = -36
 		$lab_velo.text = "UP LEFT"
 		$lab_velo/lab_velocidad.text = str(velocity.x," ", velocity.y)
 	if velocity == upRight:
 		$lab_velo.text = "UP RIGHT"
-		$AnimationArrows.offset.x = 36
-		$AnimationArrows.offset.y = -36
-		$AnimationArrows.animation = "UpRight"
 		$lab_velo/lab_velocidad.text = str(velocity.x," ", velocity.y)
+	
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene("res://Escenas/MainMenu.tscn")
 
 	if velocity.length() > 0:
-		$Img.play()
-		$AnimationArrows.play()
+		$Img.playing = true
 #		Normalizamos velocity para que el valor sea entero y multiplicamos por speed para que sea la velocidad constante.
 		velocity = velocity.normalized() * speed
 #		Cargamos a position el resultado de velocity * delta, el cual nos sirve para que la velocidad sea constante en cualquier velocidad de fotogramas.
@@ -83,4 +78,5 @@ func move(delta):
 		position.x = clamp(position.x, 0, screen_size.x)
 		position.y = clamp(position.y, 0, screen_size.y)
 	else:
-		$Img.stop()
+		$Img.frame = 0
+		$Img.playing = false

@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Escenas/MainMenu.gd" type="Script" id=1]
+
+[node name="MainMenu" type="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inicio" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 70.0
+margin_top = 233.0
+margin_right = 262.0
+margin_bottom = 343.0
+custom_constants/separation = 15
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="Inicio"]
+margin_top = 9.0
+margin_right = 192.0
+margin_bottom = 29.0
+action_mode = 0
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Button" parent="Inicio"]
+margin_top = 44.0
+margin_right = 192.0
+margin_bottom = 64.0
+action_mode = 0
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="Inicio"]
+margin_top = 79.0
+margin_right = 192.0
+margin_bottom = 99.0
+action_mode = 0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Inicio/Play" to="." method="PlayButton"]
+[connection signal="pressed" from="Inicio/Credits" to="." method="CreditsButton"]
+[connection signal="pressed" from="Inicio/Quit" to="." method="QuitButton"]

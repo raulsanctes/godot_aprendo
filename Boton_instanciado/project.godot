@@ -22,6 +22,7 @@ config/icon="res://Sprites/icon.png"
 
 window/size/width=360
 window/size/height=640
+window/stretch/aspect="expand"
 
 [input]
 
