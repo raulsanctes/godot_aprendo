@@ -4,7 +4,6 @@ extends Node2D
 # En esta zona podemos declarar variables y constantes globales
 export var speed = 200
 var screen_size
-
 const upLeft = Vector2(-1,-1)
 const upRight = Vector2(1,-1)
 const downLeft = Vector2(-1,1)
@@ -64,9 +63,9 @@ func move(delta):
 	if velocity == upRight:
 		$lab_velo.text = "UP RIGHT"
 		$lab_velo/lab_velocidad.text = str(velocity.x," ", velocity.y)
-	
+
 	if Input.is_action_pressed("ui_cancel"):
-		get_tree().change_scene("res://Escenas/MainMenu.tscn")
+		load_menu_scene()
 
 	if velocity.length() > 0:
 		$Img.playing = true
@@ -80,3 +79,7 @@ func move(delta):
 	else:
 		$Img.frame = 0
 		$Img.playing = false
+
+func load_menu_scene():
+		var _load_
+		_load_ = get_tree().change_scene("res://Escenas/MainMenu.tscn")
