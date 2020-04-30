@@ -16,9 +16,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ) ],
 "loop": true,
-"name": "Right",
+"name": "Up",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ) ],
@@ -26,9 +26,9 @@ animations = [ {
 "name": "Down",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 6 ) ],
 "loop": true,
-"name": "Up",
+"name": "Right",
 "speed": 10.0
 } ]
 
@@ -79,5 +79,4 @@ __meta__ = {
 [node name="Img" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Down"
-frame = 3
 playing = true

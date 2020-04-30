@@ -22,6 +22,12 @@ func _ready():
 # le decimos a la función que lo haga a la velocidad de renderizado del último frame, de esta manera mantenemos una
 # velocidad constante de jugabilidad.
 
+func load_menu_scene():
+		var cancel
+		cancel = get_tree().change_scene("res://Escenas/MainMenu.tscn")
+		if cancel != 0:
+			print(cancel)
+
 func _process(delta):
 	move(delta)
 
@@ -80,6 +86,3 @@ func move(delta):
 		$Img.frame = 0
 		$Img.playing = false
 
-func load_menu_scene():
-		var _load_
-		_load_ = get_tree().change_scene("res://Escenas/MainMenu.tscn")
