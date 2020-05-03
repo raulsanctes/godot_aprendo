@@ -79,4 +79,5 @@ __meta__ = {
 [node name="Img" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Down"
+frame = 2
 playing = true

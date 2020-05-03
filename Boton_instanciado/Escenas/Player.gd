@@ -58,22 +58,23 @@ func move(delta):
 		$lab_velo.text = "UP"
 		$lab_velo/lab_velocidad.text = str(velocity.x," ", velocity.y)
 	if velocity == downRight:
-		$lab_velo.text = "DOWN RIGHT"
+		$lab_velo.text = "RIGHT DOWN"
 		$lab_velo/lab_velocidad.text = str(velocity.x," ", velocity.y)
 	if velocity == downLeft:
-		$lab_velo.text = "DOWN LEFT"
+		$lab_velo.text = "LEFT DOWN"
 		$lab_velo/lab_velocidad.text = str(velocity.x," ", velocity.y)
 	if velocity == upLeft:
-		$lab_velo.text = "UP LEFT"
+		$lab_velo.text = "LEFT UP"
 		$lab_velo/lab_velocidad.text = str(velocity.x," ", velocity.y)
 	if velocity == upRight:
-		$lab_velo.text = "UP RIGHT"
+		$lab_velo.text = "RIGHT UP"
 		$lab_velo/lab_velocidad.text = str(velocity.x," ", velocity.y)
 
 	if Input.is_action_pressed("ui_cancel"):
 		load_menu_scene()
-
 	if velocity.length() > 0:
+		
+		print(velocity)
 		$Img.playing = true
 #		Normalizamos velocity para que el valor sea entero y multiplicamos por speed para que sea la velocidad constante.
 		velocity = velocity.normalized() * speed
@@ -83,6 +84,9 @@ func move(delta):
 		position.x = clamp(position.x, 0, screen_size.x)
 		position.y = clamp(position.y, 0, screen_size.y)
 	else:
+		$lab_velo.text = "IDLE"
 		$Img.frame = 0
 		$Img.playing = false
 
+func estados():
+	pass
