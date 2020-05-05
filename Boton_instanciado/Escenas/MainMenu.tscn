@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Escenas/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 
 [node name="MainMenu" type="TextureRect"]
 margin_right = 40.0
